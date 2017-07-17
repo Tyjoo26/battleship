@@ -11,6 +11,12 @@ class BattleShipTest < Minitest::Test
     assert_equal "Welcome to BATTLESHIP", battleship.print_welcome
   end
 
+  def test_print_game_prompt
+    battleship = BattleShip.new
+
+    
+  end
+
   # def test_
   #   battleship = BattleShip.new
   #
