@@ -4,10 +4,11 @@ require './lib/player'
 
 class PlayerTest < MiniTest::Test
 
-def test_does_it_exist?
-  player = Player.new
+  def does_it_exist?
+    player = Player.new
 
-  assert_instance_of Player, player
-end
+    assert_instance_of Player.new, player
+  end
+
 
 end
