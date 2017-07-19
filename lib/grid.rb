@@ -36,9 +36,45 @@ class Grid
     true
   end
 
+  def cant_place_diagonally_two(space_1, space_2)
+    a = space_1.split(//)[1].to_i
+    b = space_2.split(//)[1].to_i
+
+    if a != b
+      return false
+    end
+  end
+
   def place_three_unit(space_1, space_2, space_3)
     grid[space_1] = "full"
     grid[space_2] = "full"
     grid[space_3] = "full"
+    true
   end
+
+  def cant_place_outside_board(space_1, space_2, space_3)
+    if grid[space_3] == nil || grid[space_1] == nil
+      return false
+    end
+  end
+
+  def cant_place_diagonally(space_1, space_2, space_3)
+    a = space_1.split(//)[1].to_i
+    b = space_2.split(//)[1].to_i
+    c = space_3.split(//)[1].to_i
+
+    if a != b
+      return false
+    end
+  end
+
+  def cant_place_longer_than_three(space_1, space_2, space_3)
+    a = space_1.split(//)[1].to_i
+    b = space_3.split(//)[1].to_i
+
+    if b - a > 2 || a - b > 2
+      return false
+    end
+  end
+
 end
