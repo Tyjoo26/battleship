@@ -1,19 +1,28 @@
 require "./lib/grid"
+require 'pry'
 
 class Computer
-  #what attributes does he have?
-  attr_reader :comp_turn, :winner, :known_spaces
 
-#rules
-  #computer mu
-  #if patrol boat stern is placed in A1, can only place bow in A2 or B1
-  def instantiate_grid
-    Grid.new
+  attr_reader :computer_grid
+
+  def initialize
+    @computer_grid = Grid.new
   end
 
-  def comp_place_patrol_boat
-    full = instantiate_grid.values
-    full[rand()]
+
+  def patrol_boat_random_coordinate
+   computer_grid.grid.to_a.sample(2).flatten
   end
+
+  def patrol_coordinate_hash_value
+    Hash[*patrol_boat_random_coordinate].values
+  end
+
+  def change_patrol_value_to_full
+    hash.merge!(hash) do |key, old_value, new_value|
+      new_value = "full"
+    end
+  end
+
 
 end

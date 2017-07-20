@@ -10,4 +10,7 @@ def test_does_it_exist?
   assert_instance_of Player, player
 end
 
+def test_case_name
+
+end
 end
